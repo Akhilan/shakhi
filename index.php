@@ -15,7 +15,7 @@ if(!mysql_query($test_sql, $link))
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>MCET Online Blood Donor's Directory</title>
+        <title>Shakhi Online Blood Donor's Directory</title>
         <link href="index_page.css" rel="stylesheet" type="text/css"> </link>
     </head>
     <body>
