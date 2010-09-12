@@ -70,11 +70,13 @@ function check() {
 		
 		<h1>Blood Bank Registration</h1>
 		<div id="left-side">	
-			
-			<p>Name</p>
-			<input name="name" id="name"type="text" value="" />
-		
-			<p>Date of Birth</p>
+
+                <p>Name</p>
+                <input name="name" id="name" type="text" value="" />
+                <p>Name in Malayalam</p>
+                <input name="name_ml" id="name_ml" type="text" value="" />
+
+                <p>Date of Birth</p>
             <select  name="dd" style="width:auto">
               <?php for($i=1; $i<=31; $i++) { ?>
               <option value="<?php echo $i;?>"  >
@@ -97,7 +99,7 @@ function check() {
                 <?php } ?>
             </select>
 
-			<p>Gender &nbsp;&nbsp;&nbsp;Blood Group&nbsp;&nbsp;Weight</p>
+	<p>Gender &nbsp;&nbsp;&nbsp;Blood Group&nbsp;&nbsp;Weight</p>
             <select name="sex" style="width:auto">
                 <option value="" >Select</option>
                 <option value="1">Male</option>
@@ -114,30 +116,7 @@ function check() {
                 <?php } ?>
             </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input name="weight" style="width:50px"/>
-		
-            <p>Year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Branch&nbsp;&nbsp; Batch</p>
-            <select name="admnyear" style="width:auto">
-                <?php for($i = (int)date('Y'); $i > ((int)date('Y') - 20); $i--) {?>
-                <option><?php echo (string)$i;?></option>
-                <?php }?>
-            </select>&nbsp;&nbsp;
-            <select name="branch" style="width:auto">
-                <?php
-                    $sql = "SELECT DISTINCT course FROM course;";
-                    $result = mysql_query($sql);
-                    while ($row1 = mysql_fetch_array($result)) {
-                ?> <option><?php echo $row1["course"];?></option>
-                <?php } ?>
-            </select>&nbsp;&nbsp;
-            <select name="batch" style="width:auto">
-                <?php
-                    $sql = "SELECT DISTINCT Batch FROM batch_list;";
-                    $result = mysql_query($sql);
-                    while ($row1 = mysql_fetch_array($result)) {
-                ?> <option><?php echo $row1["Batch"];?></option>
-                <?php } ?>
-            </select>
-			<p>Date of Last Donation</p>
+	<p>Date of Last Donation</p>
             <select  name="ld" style="width:auto">
               <?php for($i=1; $i<=31; $i++) { ?>
               <option value="<?php echo $i;?>"  >
@@ -160,14 +139,35 @@ function check() {
                 <?php } ?>
             </select>
             <p>District</p>
-            <select name="address3" style="width:auto">
+            <select name="district" style="width:auto">
                 <?php
-                    $sql = "SELECT * FROM `district`;";
+                    $sql = "SELECT Name FROM `district`;";
                     $result = mysql_query($sql);
                     while ($row1 = mysql_fetch_array($result)) {
                 ?> <option><?php echo $row1["Name"];?></option>
                 <?php } ?>
+             </select>
+            <p>State</p>
+            <select name="state" style="width:auto">
+                <option>Kerala</option>
+                <?php
+                    $sql = "SELECT name FROM `states`;";
+                    $result = mysql_query($sql);
+                    while ($row1 = mysql_fetch_array($result)) {
+                ?> <option><?php echo $row1["name"];?></option>
+                <?php } ?>
+                <option>Others</option>
             </select>
+            <p>Country</p>
+            <select name="country" style="width:auto">
+                <option>India</option>
+                <?php
+                    $sql = "SELECT printable_name FROM `country`;";
+                    $result = mysql_query($sql);
+                    while ($row1 = mysql_fetch_array($result)) {
+                ?> <option><?php echo $row1["printable_name"];?></option>
+                <?php } ?>
+            </select>            
 		</div><!--end user-details-->
 		
 		<div id="right-side">		
@@ -180,8 +180,12 @@ function check() {
             <p>Password</p>
 			<input type="password" name="password" value=""/>
             <p>Re Enter Password</p>
-			<input type="password" name="repass" value=""/>
-			<p>Address</p>
+            <input type="password" name="repass" value=""/>
+            <p>Designation</p>
+            <input type="text" name="designation" value=""/>
+            <p>Organization</p>
+            <input type="text" name="organization" value=""/>
+            <p>Address</p>
             <textarea cols="" rows=""  name="address"></textarea>
             <p>&nbsp;</p><p>&nbsp;</p>
             <input type="reset" value="Reset" name="reset" class="reset"/>
