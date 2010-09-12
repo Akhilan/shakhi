@@ -114,14 +114,14 @@ require 'calculate_class.php';
             <table bgcolor="#CC9933" width="296" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="5" height="36">&nbsp;</td>
-                <td width="118">Select District </td>
-                <td width="173"><select name="District" id="District">
+                <td width="118">Select Country </td>
+                <td width="173"><select name="Country" id="Country">
            <option value="NULL" >All</option>
           <?php
 
-            $rst = mysql_query("select DISTINCT District from registration ");
+            $rst = mysql_query("select DISTINCT country from registration order by country");
             while($nt=mysql_fetch_array($rst)) { ?>
-          <option value="<?php echo $nt["District"];?>"><?php echo $nt["District"]?></option>
+          <option value="<?php echo $nt["country"];?>"><?php echo $nt["country"]?></option>
           <?php } ?>
           </select></td>
                 </tr>

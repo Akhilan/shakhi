@@ -22,6 +22,7 @@ if(!mysql_query($test_sql, $link))
         <img alt="header" src="images/main_header.png"/>
         <div class="sidelink">
             <p><a href="search.php?page=1&new_page=yes">Search</a></p>
+		<p><a href = "register.php">Register</a></p>
             <p><a href="issue.php">Request Blood</a></p>
             <p><a href="comments.php">Comments</a></p>
             <p><a href="tips.php">Tips of Blood Donation</a></p>
