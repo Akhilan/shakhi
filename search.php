@@ -119,7 +119,7 @@ require 'calculate_class.php';
            <option value="NULL" >All</option>
           <?php
 
-            $rst = mysql_query("select DISTINCT country from registration ");
+            $rst = mysql_query("select DISTINCT country from registration order by country");
             while($nt=mysql_fetch_array($rst)) { ?>
           <option value="<?php echo $nt["country"];?>"><?php echo $nt["country"]?></option>
           <?php } ?>
