@@ -72,14 +72,14 @@ if(isset($_POST["email"])){
     VALUES ('$name', '$name_ml', '$dob',$sex,'$bgroup','$weight','$designation','$phone','$email','$last', '$publish','$district','$address', '$state', '$organization')";
     $sql2="INSERT INTO user (UserID, PWD)VALUES ('$email' , '$hashed_password')";
     echo $sql;
-//    mysql_query($sql2,$link);
-//
-//    if(!mysql_query($sql,$link))
-//            die ('Error' . mysql_error());
-//    else {
-//        mysql_query($result1,$link);
-//        $_SESSION['key1']='$email';
-//        header("Location: ./index.php?msg=Please login here");
-//    }
+    mysql_query($sql2,$link);
+
+    if(!mysql_query($sql,$link))
+            die ('Error' . mysql_error());
+    else {
+        mysql_query($result1,$link);
+        $_SESSION['key1']='$email';
+        header("Location: ./index.php?msg=Please login here");
+    }
  }
  ?>

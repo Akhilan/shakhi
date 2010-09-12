@@ -106,8 +106,9 @@ require 'cnn.php';
       </tr>
       <tr bgcolor="#CC9933">
         <td height="184" bgcolor="#FFFFFF" ><div align="left" style="padding: 10px">
-          <p align="center"><strong>NSS Online Blood Donor's Directory Team</strong></p>
-          <p><b> Thanks to </b></p>
+          <p align="center"><strong>Online Blood Donor's Directory Team</strong></p>
+          <p><u><b> Special Thanks to </b></u></p>
+          <p><i> <b>Sooraj Kennoth</b>, Free Software Evangelist, ZYXware, Thiruvananthapuram</i></p>
           <?php
               $sql = 'SELECT * FROM operator ORDER BY operator';
               $result = mysql_query($sql);
@@ -130,7 +131,14 @@ require 'cnn.php';
                   }
               }
           ?>
-          <p><b>Development Team</b></p>
+          <p><u><b>Development Team</b></u></p>
+          <p><i><b>Anish A</b>, 3rd Year Computer Science, Mohandas College, Thiruvanathapuram</i></p>
+          <p><i><b>Arun Anson</b>, 3rd Year Computer Science, Mohandas College, Thiruvanathapuram</i></p>
+          <p><i><b>Jayakumar A</b>, 3rd Year, National Institute of Technology , Kozhikode</i></p>
+          <p><i><b>Kevin Madhu</b>, 1st Year Computer Science, Mohandas College, Thiruvanathapuram</i></p>
+          <p><i><b>Mahesh Mohan M U</b>, 3rd Year Bsc. Computer Science, UIT Kuravankonam , Thiruvananthapuram</i></p>
+          <p><i><b>Manoj K</b>, 4th Year Mechanical, Vidhaya Academy , Thrissur</i></p>
+          <p><i><b>Raru R V</b>, 1st Year Bsc. Computer Science, UIT Pirappancode , Thiruvananthapuram</i></p>
           <?php
               $sql = 'SELECT * FROM operator ORDER BY operator';
               $result = mysql_query($sql);

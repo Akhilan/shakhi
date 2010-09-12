@@ -160,7 +160,6 @@ function check() {
             </select>
             <p>Country</p>
             <select name="country" style="width:auto">
-                <option>India</option>
                 <?php
                     $sql = "SELECT printable_name FROM `country`;";
                     $result = mysql_query($sql);
